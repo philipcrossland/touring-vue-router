@@ -9,7 +9,11 @@ export default {
   inject: ['GStore'],
   methods: {
     register() {
-      this.GStore.flashMessage = `You are successfully registered for ${this.event.title}`
+      // Call to API
+      // If registered then redirect to event details
+
+      this.GStore.flashMessage =
+        'You are successfully registered for ' + this.event.title
 
       setTimeout(() => {
         this.GStore.flashMessage = ''

@@ -5,8 +5,8 @@ import EventDetails from '../views/event/Details.vue'
 import EventRegister from '../views/event/Register.vue'
 import EventEdit from '../views/event/Edit.vue'
 import About from '../views/About.vue'
-import NotFound from '../views/NotFound.vue'
-import NetworkError from '../views/NetworkError.vue'
+import NotFound from '@/views/NotFound.vue'
+import NetworkError from '@/views/NetworkError.vue'
 
 const routes = [
   {
@@ -35,13 +35,13 @@ const routes = [
         path: 'edit',
         name: 'EventEdit',
         component: EventEdit
-      },
+      }
     ]
   },
   {
     path: '/event/:afterEvent(.*)',
     redirect: to => {
-      return { path: `/events/${to.params.afterEvent}` }
+      return { path: '/events/' + to.params.afterEvent }
     }
   },
   {
